@@ -10,7 +10,7 @@ public class ElementiHolder extends RecyclerView.ViewHolder  {
 
     TextView  mText;
     ImageView mImage;
-    Elementi mElementi;
+
 
     public ElementiHolder(@NonNull View itemView) {
         super(itemView);
@@ -19,9 +19,9 @@ public class ElementiHolder extends RecyclerView.ViewHolder  {
         mImage = itemView.findViewById(R.id.imageViewH);
 
     }
-    public void bind (Elementi elementi){
-        mElementi = elementi;
-        mText.setText(mElementi.getNome());
+    public void bind (String elementi){
+
+        mText.setText(elementi);
         mImage.setImageResource(R.mipmap.ic_launcher_round);
     }
 }

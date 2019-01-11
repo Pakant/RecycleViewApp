@@ -12,6 +12,7 @@ public class ElementiAdapter extends RecyclerView.Adapter<ElementiHolder> {
 
     private ArrayList<Elementi> mElement;
 
+
     public ElementiAdapter (ArrayList<Elementi> elementList) {
         mElement = elementList;
     }
@@ -19,14 +20,13 @@ public class ElementiAdapter extends RecyclerView.Adapter<ElementiHolder> {
     @NonNull
     @Override
     public ElementiHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.elementi_item,viewGroup);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.elementi_item,viewGroup,false);
         return new ElementiHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ElementiHolder elementiHolder, int position) {
-        Elementi elementi = mElement.get(position);
-        elementiHolder.bind(elementi);
+        elementiHolder.bind(mElement.get(position).getNome());
     }
 
     @Override
